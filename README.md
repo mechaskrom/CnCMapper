@@ -18,8 +18,8 @@ A config file (.INI file) can be passed to the tool to control how it should dra
 ```
 CnCMapper infolder [config file]
 
-Infolder is path to a supported game folder.
-Config file is an optional path to a configfile. Try to detect game and use its default config if omitted.
+Infolder is a path to a supported game folder.
+Config file is an optional path to a config file. Try to detect game and use its default config if omitted.
 
 Example: CnCMapper ".\Command & Conquer(tm)" "TiberianDawn.ini"
 ```
