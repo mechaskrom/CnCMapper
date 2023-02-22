@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9D589D13-5671-4922-89C3-60AD6E019054}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CnCMapper</RootNamespace>
+    <AssemblyName>CnCMapper</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;BENCH</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;BENCH</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release VGMaps|AnyCPU' ">
+    <OutputPath>bin\Release VGMaps\</OutputPath>
+    <DefineConstants>TRACE;BENCH DRAW_CREATED_INFO</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Crypt\Blowfish.cs" />
+    <Compile Include="Crypt\BlowfishKey.cs" />
+    <Compile Include="Crypt\Crc.cs" />
+    <Compile Include="Crypt\Format40.cs" />
+    <Compile Include="Crypt\Format80.cs" />
+    <Compile Include="Crypt\Pack.cs" />
+    <Compile Include="Crypt\RleZeroD2.cs" />
+    <Compile Include="Game\CnC\ConfigCnC.cs" />
+    <Compile Include="Game\CnC\D2\ColorSchemeD2.cs" />
+    <Compile Include="Game\CnC\D2\ConfigD2.cs" />
+    <Compile Include="Game\CnC\D2\FilePakSearchD2.cs" />
+    <Compile Include="Game\CnC\D2\GameD2.cs" />
+    <Compile Include="Game\CnC\D2\HouseD2.cs" />
+    <Compile Include="Game\CnC\D2\IniKeyFinderD2.cs" />
+    <Compile Include="Game\CnC\D2\LandTypeD2.cs" />
+    <Compile Include="Game\CnC\D2\MapD2.cs" />
+    <Compile Include="Game\CnC\D2\MapGeneratorD2.cs" />
+    <Compile Include="Game\CnC\D2\MapInfoDrawerD2.cs" />
+    <Compile Include="Game\CnC\D2\MissionDataD2.cs" />
+    <Compile Include="Game\CnC\D2\PaletteD2.cs" />
+    <Compile Include="Game\CnC\D2\RadarD2.cs" />
+    <Compile Include="Game\CnC\D2\RandomD2.cs" />
+    <Compile Include="Game\CnC\D2\SpiceFieldD2.cs" />
+    <Compile Include="Game\CnC\D2\SpriteD2.cs" />
+    <Compile Include="Game\CnC\D2\SpriteUnitDirD2.cs" />
+    <Compile Include="Game\CnC\D2\SpriteStructureD2.cs" />
+    <Compile Include="Game\CnC\D2\SpriteUnitD2.cs" />
+    <Compile Include="Game\CnC\D2\TestsD2.cs" />
+    <Compile Include="Game\CnC\D2\TestsIniAdderD2.cs" />
+    <Compile Include="Game\CnC\D2\TheaterD2.cs" />
+    <Compile Include="Game\CnC\D2\TileSetD2.cs" />
+    <Compile Include="Game\CnC\D2\GroundLayerD2.cs" />
+    <Compile Include="FileFormat\FileCpsImageWw.cs" />
+    <Compile Include="FileFormat\FileIcnTilesD2.cs" />
+    <Compile Include="FileFormat\FileIcnTileSetRA.cs" />
+    <Compile Include="FileFormat\FileIcnTileSetTD.cs" />
+    <Compile Include="FileFormat\FileIniEditor.cs" />
+    <Compile Include="FileFormat\FileMapTileSetsD2.cs" />
+    <Compile Include="FileFormat\FileMixArchiveWwEditor.cs" />
+    <Compile Include="FileFormat\FileOther.cs" />
+    <Compile Include="FileFormat\FilePakArchiveWw.cs" />
+    <Compile Include="FileFormat\FilePakArchiveWwEditor.cs" />
+    <Compile Include="FileFormat\FileProto.cs" />
+    <Compile Include="FileFormat\FileShpSpriteSetD2.cs" />
+    <Compile Include="FileFormat\FolderContainer.cs" />
+    <Compile Include="FileFormat\IFileContainer.cs" />
+    <Compile Include="Frame.cs" />
+    <Compile Include="Game\CnC\IniKeyFinderCnC.cs" />
+    <Compile Include="Game\CnC\MapCnC.cs" />
+    <Compile Include="Game\CnC\MapInfoDrawerCnC.cs" />
+    <Compile Include="Game\CnC\PaletteCnC.cs" />
+    <Compile Include="Game\CnC\RadarCnC.cs" />
+    <Compile Include="Game\CnC\TheaterCnC.cs" />
+    <Compile Include="Game\CnC\GroundLayerCnC.cs" />
+    <Compile Include="Game\FileSearch.cs" />
+    <Compile Include="IndexedImage.cs" />
+    <Compile Include="Lib\BigInteger.cs" />
+    <Compile Include="Bench.cs" />
+    <Compile Include="MiscExt.cs" />
+    <Compile Include="FileFormat\FileBase.cs" />
+    <Compile Include="FileFormat\FileBinTileSetTableTD.cs" />
+    <Compile Include="FileFormat\FileFntFontWw.cs" />
+    <Compile Include="FileFormat\FileIni.cs" />
+    <Compile Include="FileFormat\FileMrfFadingTableWw.cs" />
+    <Compile Include="FileFormat\FilePalPalette6Bit.cs" />
+    <Compile Include="FileFormat\FileShpSpriteSetTDRA.cs" />
+    <Compile Include="FileFormat\FileIcnTileSetTDRA.cs" />
+    <Compile Include="FileFormat\FileUnknown.cs" />
+    <Compile Include="FileFormat\FileMixArchiveWw.cs" />
+    <Compile Include="Palette6Bit.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StreamExt.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Game\CnC\TDRA\ConfigTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\HouseTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\IniKeyFinderTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\MapInfoDrawerTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\MissionDataTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RadarTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\ColorSchemeRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\ConfigRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\GameRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\HouseRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\IniKeyFinderRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\MapInfoDrawerRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\MissionDataRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\RadarRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\RuleRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\StructureRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\TerrainRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\TestsRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\TestsIniAdderRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\FixedMathRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\FileDatabaseRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\MapRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\PaletteRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\SpriteFlagRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\SpriteInfantryRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\SpriteOverlayRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\SpriteShipRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\SpriteSmudgeRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\SpriteStructureRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\SpriteTerrainRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\SpriteUnitRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\TheaterRA.cs" />
+    <Compile Include="Game\CnC\TDRA\FileMixSearchTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\TileSetRA.cs" />
+    <Compile Include="Game\CnC\TDRA\RA\GroundLayerRA.cs" />
+    <Compile Include="Game\CnC\TDRA\SpriteInfantryTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\SpriteSmudgeTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\SpriteStructureTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\SpriteUnitTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\ColorSchemeTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\ConfigTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\GameTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\HouseTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\IniKeyFinderTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\MapInfoDrawerTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\MissionDataTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\RadarTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\StructureTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\TerrainTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\TileSetTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\GroundLayerTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TestsIniAdderTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\FileDatabaseTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\MapTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\PaletteTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\SpriteTDRA.cs" />
+    <Compile Include="Game\CnC\TDRA\TheaterTDRA.cs" />
+    <Compile Include="Game\TilePos.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\TestsTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\TestsIniAdderTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\FileDatabaseTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\MapTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\PaletteTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\SpriteFlagTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\SpriteInfantryTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\SpriteOverlayTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\SpriteSmudgeTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\SpriteStructureTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\SpriteTerrainTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\SpriteUnitTD.cs" />
+    <Compile Include="Game\CnC\TDRA\TD\TheaterTD.cs" />
+    <Compile Include="Game\CnC\TDRA\GroundLayerTDRA.cs" />
+    <Compile Include="Game\TileTracker.cs" />
+    <Compile Include="TextDrawer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font6x10 CnC.fnt" />
+    <None Include="Resources\global mix database TDRA.dat.gz" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
